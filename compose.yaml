@@ -1,0 +1,16 @@
+services:
+  server:
+    build:
+      context: .
+    ports:
+      - 8080:8080
+
+  postgres:
+    image: postgres:14
+    environment:
+      - POSTGRES_DB=depl
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_USER=postgres
+    ports:
+      - 5432
+
